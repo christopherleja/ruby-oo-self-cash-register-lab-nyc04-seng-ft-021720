@@ -13,16 +13,9 @@ class CashRegister
     @total += (price * quantity)
   end
   
-  def total_reduce(total, discount)
-    if @discount != 0
-      @total = total - total *(@discount/100)
-      @total
-    end
-  end
-  
   def apply_discount
     if @discount != 0
-      total_reduce(total, discount)
+      self.total = (total*(0.01(100-@discount))).to_i
       puts "After the discount, the total comes to #{@total}"
     else
       @total
