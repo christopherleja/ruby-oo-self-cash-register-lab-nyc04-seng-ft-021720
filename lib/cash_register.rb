@@ -21,7 +21,8 @@ class CashRegister
   end
   
   def apply_discount
-    total_reduce(total, discount)
+    if @discount != 0
+      total_reduce(total, discount)
       puts "After the discount, the total comes to #{@total}"
     else
       @total
