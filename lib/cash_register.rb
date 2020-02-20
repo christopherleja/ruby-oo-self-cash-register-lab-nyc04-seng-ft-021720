@@ -15,7 +15,7 @@ class CashRegister
     @item = item
     @total += (price * quantity)
     quantity.times do @items.push(item)
-    @transaction = price * quantity
+    @transaction = price*quantity
     end
   end
   
@@ -37,7 +37,8 @@ class CashRegister
   end
   
   def void_last_transaction
-    @total - @transaction
+    voided_transaction = @total - @transaction
+    voided_transaction
   end
   
 end
